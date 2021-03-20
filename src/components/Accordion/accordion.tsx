@@ -1,11 +1,9 @@
 import React from 'react';
 
-
 type ItemType = {
     title: string
     value: any
 }
-
 export type AccordionPropsType = {
     title: string
     collapsed: boolean
@@ -15,16 +13,18 @@ export type AccordionPropsType = {
 
 }
 
+const MemoizedAccordionTitle = React.memo(AccordionTitle)
+const MemoizedAccordionBody = React.memo(AccordionBody)
+
 export function Accordion (props: AccordionPropsType) {
     console.log("Accordion rendering")
         return (
             <div>
-                <AccordionTitle title={props.title} onChange={props.onChange}/>
-                {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
+                <MemoizedAccordionTitle title={props.title} onChange={props.onChange}/>
+                {!props.collapsed && <MemoizedAccordionBody items={props.items} onClick={props.onClick}/>}
             </div>
         )
 }
-
 
 type AccordionTitlePropsType = {
     title: string
@@ -35,7 +35,6 @@ function AccordionTitle (props: AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return <h3 onClick={(e) => props.onChange()}>---{props.title}---</h3>
 }
-
 
 type AccordionBodyPropsType = {
     items: ItemType[]
