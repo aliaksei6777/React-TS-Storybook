@@ -13,22 +13,6 @@ export default {
 const callback = action("accordion mode change event fired")
 const onCLickCallback = action("some item was clicked")
 
-// const Template: Story<AccordionPropsType> = (args) => <Accordion {...args}/>;
-//
-// export const MenuCollapsedMode2 = Template.bind({})
-// MenuCollapsedMode2.args = {
-//     title: "Menu",
-//     collapsed: true,
-//     onChange: callback
-// }
-//
-// export const UsersUncollapsedMode2 = Template.bind({})
-// UsersUncollapsedMode2.args = {
-//     title: "Users",
-//     collapsed: false,
-//     onChange: callback
-// }
-
 
 export const MenuCollapsedMode = () => <Accordion title={"Menu"}
                                                   collapsed={true}
