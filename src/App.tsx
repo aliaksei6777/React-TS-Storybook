@@ -3,6 +3,7 @@ import './App.css';
 import {Accordion} from "./components/Accordion/accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import OnOff from "./components/OnOff/OnOff";
+import {Clock} from "./components/Clock/Clock";
 
 const MemoizedOnOff = React.memo(OnOff)
 const MemoizedRating = React.memo(Rating)
@@ -30,6 +31,7 @@ function App() {
                                onClick={(value) => {
                                    alert(value)
                                }}/>
+            <Clock/>
         </div>
     );
 }
